@@ -35,21 +35,21 @@
             // 
             // button1
             // 
-            button1.Location = new Point(400, 276);
+            button1.Location = new Point(39, 124);
             button1.Name = "button1";
-            button1.Size = new Size(75, 23);
+            button1.Size = new Size(210, 41);
             button1.TabIndex = 0;
-            button1.Text = "button1";
+            button1.Text = "Reporte de Ventas";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
             // button2
             // 
-            button2.Location = new Point(403, 333);
+            button2.Location = new Point(36, 184);
             button2.Name = "button2";
-            button2.Size = new Size(75, 23);
+            button2.Size = new Size(213, 41);
             button2.TabIndex = 1;
-            button2.Text = "button2";
+            button2.Text = "Inovice QuestPDF";
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
