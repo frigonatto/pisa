@@ -5,8 +5,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace pisa
 {
@@ -76,14 +78,34 @@ namespace pisa
 
         public void ComposeContent(IContainer container)
         {
+            container.PaddingVertical(40).Column(column =>
+            {
+                column.Spacing(5);
+                column.Item().Element(ComposeTable);
+
+                if (!string.IsNullOrWhiteSpace(Model.Comments))
+                    column.Item().PaddingTop(25).Element(ComposeComments);
+            });
+        }
+
+        public void ComposeTable(IContainer container)
+        {
             container
-                .PaddingVertical(40)
                 .Height(250)
                 .Background(Colors.Grey.Lighten3)
                 .AlignCenter()
                 .AlignMiddle()
-                .Text("Content").FontSize(16);
-        }
+                .Text("Table").FontSize(16);
 
+        }
+        public void ComposeComments(IContainer container)
+        {
+            container.Background(Colors.Grey.Lighten3).Padding(10).Column(column =>
+            {
+                column.Spacing(5);
+                column.Item().Text("Comments").FontSize(14);
+                column.Item().Text(Model.Comments);
+            });
+        }
     }
 }

@@ -1,3 +1,4 @@
+using System;
 using QuestPDF.Fluent;
 using QuestPDF.Infrastructure;
 
@@ -29,6 +30,10 @@ namespace pisa
 
         private void button2_Click(object sender, EventArgs e)
         {
+            // Datetime to ticks
+            long ticks = DateTime.Now.Ticks;
+            // Ticks to datetime 
+            DateTime dateFromTicks = new DateTime(ticks);
 
             QuestPDF.Settings.License = LicenseType.Community;
 
